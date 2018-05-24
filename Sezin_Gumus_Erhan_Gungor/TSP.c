@@ -72,7 +72,7 @@ void FindPath(int ** matrix, struct city * medium, int n){
 		//Find the next city
 		i = nextCity;
 		temp = FindCity(nextCity);
-		//printf("%s \n",temp->city_name,temp->x,temp->y);
+		printf("%s \n",temp->city_name,temp->x,temp->y);
 		temp->a = 1;	//City is visited
 		if(k == n-2)
 			sum+=calculateDistance(header1,temp);	//Add distance between last city and start point
@@ -91,7 +91,7 @@ struct city * FindCity(int n){
 }
 
 void ReadFromFile(){
-	file = fopen("test1.txt" , "r");
+	file = fopen("test4.txt" , "r");
 	int temp_x = 0;
 	int temp_y = 0;
 	char temp_name[1000000];
@@ -131,7 +131,7 @@ void WriteToFile(){
 	fclose(file);
 }
 
-struct city* FindMedium(int n){
+/*struct city* FindMedium(int n){
 	//Find the median of all cities
 	char* name= "temp";
 	double tempdiff;
@@ -165,7 +165,7 @@ struct city* FindMedium(int n){
 		temp = temp->nextCity;
 	}
 	return medium;
-}
+}*/
 
 int createAdjacencyMatrix(int ** matrix, int n){
 	struct city *temp1 = NULL;
